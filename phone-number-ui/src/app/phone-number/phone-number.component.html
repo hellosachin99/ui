@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-light my-5">
+        <div class="card-body">
+          <form #userForm="ngForm">
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" [(ngModel)]="phone"
+                     class="form-control"
+                     id="phone"
+                     name="phone"
+                     placeholder="Enter your phone"
+                     required #name="ngModel"><br><a class="btn btn-info" (click)="modify()">Modify</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div *ngIf="hasResponse">
+        <ul>
+          <li *ngFor="let mn of modifiedNumbers">{{mn}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
